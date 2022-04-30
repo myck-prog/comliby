@@ -1,17 +1,24 @@
 import Home from './pages/Home';
+import Books from './pages/Books';
 import Nav from './components/Nav'
 import Footer from './components/Footer';
+import {books} from './data'
+import { BrowserRouter as Router, Route,Routes} from "react-router-dom";
+import Book from "./components/ui/Book"
 
-import { BrowserRouter as Router, Route } from "react-router-dom"
 
-// 5
+
+// 1:02:44
 function App() {
 
   return (
     <Router>
       <div className="App">
         <Nav />
-        <Home/>
+        <Routes>
+        <Route path="/" exact element = {<Home/>}/>
+        <Route path="/books" element={<Books books={books}/>} />
+        </Routes>
         <Footer />
       </div>
     </Router>
