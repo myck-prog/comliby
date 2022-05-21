@@ -18,6 +18,7 @@ function App() {
         <Routes>
         <Route path="/" exact element = {<Home/>}/>
         <Route path="/books" element={<Books books={books}/>} />
+        <Route path="/books/1" element={<BooksInfo books={books}/>} />
         </Routes>
         <Footer />
       </div>
