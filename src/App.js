@@ -2,6 +2,7 @@ import Home from './pages/Home';
 import Books from './pages/Books';
 import Nav from './components/Nav'
 import Footer from './components/Footer';
+import BookInfo from './pages/BookInfo';
 import {books} from './data'
 import { BrowserRouter as Router, Route,Routes} from "react-router-dom";
 import Book from "./components/ui/Book"
@@ -18,7 +19,7 @@ function App() {
         <Routes>
         <Route path="/" exact element = {<Home/>}/>
         <Route path="/books" element={<Books books={books}/>} />
-        <Route path="/books/1" element={<BooksInfo books={books}/>} />
+        <Route path="/books/1" element={<BookInfo books={books}/>} />
         </Routes>
         <Footer />
       </div>
