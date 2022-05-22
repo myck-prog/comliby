@@ -9,7 +9,7 @@ import Book from "./components/ui/Book"
 
 
 
-// 1:17:11
+// 1:26:18 prior to components
 function App() {
 
   return (
@@ -18,7 +18,7 @@ function App() {
         <Nav />
         <Routes>
         <Route path="/" exact element = {<Home/>}/>
-        <Route path="/books" element={<Books books={books}/>} />
+        <Route path="/books" exact element={<Books books={books}/>} />
         <Route path="/books/1" element={<BookInfo books={books}/>} />
         </Routes>
         <Footer />
