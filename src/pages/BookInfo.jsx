@@ -1,17 +1,22 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Price from '../components/ui/Price';
 import Rating from '../components/ui/Rating';
 import Book from '../components/ui/Book';
-const BookInfo = ({ books }) => {
+const BookInfo = ({ books, addToCart, cart}) => {
     const { id } = useParams();
     const book = books.find(book => +book.id === +id);
+    
     // you can use parsefloat but we can put + both sides and string will be turned into number
+    function addBookToCart(book) {
 
+        addToCart(book)
+    }
 
-    console.log(book)
-
+    function bookExistsOnCart(){
+        return cart.find(book => book.id === +id);
+    }
     return (
         <div id="books__body">
             <main className="books__main">
@@ -27,7 +32,7 @@ const BookInfo = ({ books }) => {
                         </div>
                         <div className="book__selected">
                             <figure className="book__selected--figure">
-                                <img src={book.url} alt="" className="book__selected--ig" />
+                                <img src={book.url} alt="" className="book__selected--img" />
                             </figure>
                             <div className="book__selected--description">
                                 <h2 className="book__selected--title">
@@ -52,9 +57,16 @@ const BookInfo = ({ books }) => {
 
                                     </p>
                                 </div>
-                                <button className="btn">
-                                    Add to Cart
-                                </button>
+                                {
+                                    bookExistsOnCart() ? (
+                                    <Link to ={`/cart`} className="book__link">
+                                    <button className="btn"> Checkout</button> </Link>): (
+                                        <button className="btn" onClick={() => addBookToCart(book)}>
+                                            Add to Cart
+                                        </button>
+                                    )
+                                }
+                                {/* don't forget the arrow function on onlick to pass parametes */}
                             </div>
                         </div>
                     </div>
@@ -70,9 +82,9 @@ const BookInfo = ({ books }) => {
 
                             {
                                 books
-                                .filter((book) => book.rating === 5 && +book.id !== +id)
-                                .slice(0,4)
-                                .map(book => <Book book={book} key={book.id} />)
+                                    .filter((book) => book.rating === 5 && +book.id !== +id)
+                                    .slice(0, 4)
+                                    .map(book => <Book book={book} key={book.id} />)
                             }
                         </div>
                     </div>
