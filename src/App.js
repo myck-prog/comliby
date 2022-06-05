@@ -36,6 +36,10 @@ function App() {
     }))
 
   }
+  function removeItem(item){
+    setCart(cart.filter(book => book.id !== item.id))
+    console.log("remove i")
+  }
   // how to see it right away, [cart is the variable we are watching]
   useEffect(() => {
     console.log(cart)
@@ -49,7 +53,7 @@ function App() {
           <Route path="/" exact element={<Home />} />
           <Route path="/books" exact element={<Books books={books} />} />
           <Route path="/books/:id" element={<BookInfo books={books} addToCart={addToCart} cart={cart} />} />
-          <Route path="/cart" element={<Cart books={books} cart={cart} changeQuantity={changeQuantity} />} />
+          <Route path="/cart" element={<Cart books={books} cart={cart} changeQuantity={changeQuantity} removeItem={removeItem}/>} />
         </Routes>
         <Footer />
       </div>
