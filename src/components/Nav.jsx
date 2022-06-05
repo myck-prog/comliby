@@ -4,7 +4,7 @@ import LibraryLogo from '../assets/Library.svg'
 import {Link} from "react-router-dom"
 
 // 04/21 1:19:51
-const Nav = () => {
+const Nav = ({numberOfItems}) => {
     function openMenu(){
         // dont forget to add space 
         document.body.classList += " menu--open";
@@ -42,7 +42,11 @@ const Nav = () => {
                     <Link to="/cart" className="nav__link">
                         <FontAwesomeIcon icon="shopping-cart"/>
                     </Link>
-                <span className="cart__length">2</span>
+                    {/* {kalo render itu setengah setengah , 1st value bool and second } */}
+                    {
+                        numberOfItems >0 && <span className="cart__length">{numberOfItems}</span>
+                
+                    }
                 </li>
             </ul>
             <div className="menu__backdrop">

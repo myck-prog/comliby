@@ -20,6 +20,13 @@ function App() {
     setCart([...cart, { ...book, quantity: 1 }])
 
   }
+  function numberOfItems(){
+    let counter = 0;
+    cart.forEach(item =>{
+      counter += item.quantity
+    })
+    return counter;
+  }
   function changeQuantity(book, quantity) {
     setCart(cart.map(item => {
       return item.id === book.id
@@ -48,7 +55,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Nav />
+      {/* remember to not pass the function but pass the value */}
+        <Nav numberOfItems={numberOfItems()}/>
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/books" exact element={<Books books={books} />} />
