@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import LibraryLogo from '../assets/Library.svg'
 import {Link} from "react-router-dom"
 
-// 04/21 1:19:51
+
 const Nav = ({numberOfItems}) => {
     function openMenu(){
         // dont forget to add space 
