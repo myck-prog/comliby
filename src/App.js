@@ -6,12 +6,11 @@ import Footer from './components/Footer';
 import BookInfo from './pages/BookInfo';
 import { books } from './data'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Book from "./components/ui/Book"
 import Cart from './pages/Cart';
 
 
 
-// 2:14:17
+
 function App() {
   const [cart, setCart] = useState([]);
 
@@ -72,31 +71,3 @@ function App() {
 
 export default App;
 
-// //PREVIOUS CODE
-// function addToCart(book){
-//   //using hooks in array we need to pass in an array
-//   // setCart([...cart,{...book,quantity:1}]) how to increment duplicate items
-//   const dupeItem = cart.find(item => +item.id === +book.id)
-//   if(dupeItem){
-//     setCart(cart.map(item => {
-//       if(item.id === dupeItem.id){
-//         return{
-//           ...item,
-//           quantity: item.quantity + 1,
-//         };
-//       }
-//       else{
-//         return item
-//       }
-//     }))
-//   }
-//   else{
-//     setCart([...cart,{...book,quantity:1}])
-//   }
-
-// }
-// // how to see it right away, [cart is the variable we are watching]
-// useEffect(() => {
-//   console.log(cart)
-
-// }, [cart]);

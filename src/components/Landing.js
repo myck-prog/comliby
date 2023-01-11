@@ -7,14 +7,14 @@ const Landing = () => {
       <header>
         <div className="header__container">
           <div className="header__description">
-            <h1>Canada's most awarded online library platform</h1>
+            <h1>Canada's premier online library platform</h1>
             <h2>
-              Find your dream book with <span className="purple">Library</span>
+            Discover endless knowledge with <span className="purple">Comliby</span>
             </h2>
             <Link to="books">
               <button className="btn">Browse book</button>
             </Link>
-            <figure className="header__ig--wrapper">
+            <figure className="header__img--wrapper">
               <img src={UndrawBooks} alt="" />
             </figure>
           </div>
