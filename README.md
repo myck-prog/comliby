@@ -12,6 +12,7 @@ This website provided a real-time update in a simple single page application wit
 - dynamic checkout pages
 - dynamic notification on cart icon
 - loading states.
+- [more!](https://comliby.vercel.app/)
 
 ## Further Improvement
 - Adding pagination for more books
