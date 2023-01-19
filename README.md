@@ -1,5 +1,5 @@
 # Comliby 
-This Ecommerce Website is hosted here (https://comliby.vercel.app/)
+
 ![Screen Shot 2023-01-19 at 2 56 58 PM](https://user-images.githubusercontent.com/91393229/213582907-cba96aac-6a6e-4a5a-94c5-ddd2763b10f1.png)
 
 ## Tell Me about the Project
@@ -19,4 +19,6 @@ This website provided a real-time update in a simple single page application wit
 
 ### Tech Stack
 - React, Javascript, HTMl + CSS BEM
-- Router, Vercel
+- Vercel
+
+This Ecommerce Website is hosted here (https://comliby.vercel.app/)
