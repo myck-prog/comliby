@@ -7,7 +7,7 @@ A functional e-commerce website about book marketplace that dynamically showcase
 
 ## Features
 This website provided a real-time update in a simple single page application with 
-- sorting capabilities  
+- property-based sorting capabilities  
 - book descriptions section 
 - dynamic checkout pages
 - dynamic notification on cart icon
